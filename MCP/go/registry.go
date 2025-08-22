@@ -1,0 +1,37 @@
+package main
+
+import (
+	"github.com/amazon-textract/mcp-server/config"
+	"github.com/amazon-textract/mcp-server/models"
+	tools_x_amz_target_textract_startexpenseanalysis "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_startexpenseanalysis"
+	tools_x_amz_target_textract_detectdocumenttext "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_detectdocumenttext"
+	tools_x_amz_target_textract_analyzedocument "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_analyzedocument"
+	tools_x_amz_target_textract_analyzeexpense "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_analyzeexpense"
+	tools_x_amz_target_textract_getlendinganalysis "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_getlendinganalysis"
+	tools_x_amz_target_textract_getdocumentanalysis "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_getdocumentanalysis"
+	tools_x_amz_target_textract_getdocumenttextdetection "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_getdocumenttextdetection"
+	tools_x_amz_target_textract_getlendinganalysissummary "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_getlendinganalysissummary"
+	tools_x_amz_target_textract_startdocumentanalysis "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_startdocumentanalysis"
+	tools_x_amz_target_textract_startdocumenttextdetection "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_startdocumenttextdetection"
+	tools_x_amz_target_textract_startlendinganalysis "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_startlendinganalysis"
+	tools_x_amz_target_textract_analyzeid "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_analyzeid"
+	tools_x_amz_target_textract_getexpenseanalysis "github.com/amazon-textract/mcp-server/tools/x_amz_target_textract_getexpenseanalysis"
+)
+
+func GetAll(cfg *config.APIConfig) []models.Tool {
+	return []models.Tool{
+		tools_x_amz_target_textract_startexpenseanalysis.CreateStartexpenseanalysisTool(cfg),
+		tools_x_amz_target_textract_detectdocumenttext.CreateDetectdocumenttextTool(cfg),
+		tools_x_amz_target_textract_analyzedocument.CreateAnalyzedocumentTool(cfg),
+		tools_x_amz_target_textract_analyzeexpense.CreateAnalyzeexpenseTool(cfg),
+		tools_x_amz_target_textract_getlendinganalysis.CreateGetlendinganalysisTool(cfg),
+		tools_x_amz_target_textract_getdocumentanalysis.CreateGetdocumentanalysisTool(cfg),
+		tools_x_amz_target_textract_getdocumenttextdetection.CreateGetdocumenttextdetectionTool(cfg),
+		tools_x_amz_target_textract_getlendinganalysissummary.CreateGetlendinganalysissummaryTool(cfg),
+		tools_x_amz_target_textract_startdocumentanalysis.CreateStartdocumentanalysisTool(cfg),
+		tools_x_amz_target_textract_startdocumenttextdetection.CreateStartdocumenttextdetectionTool(cfg),
+		tools_x_amz_target_textract_startlendinganalysis.CreateStartlendinganalysisTool(cfg),
+		tools_x_amz_target_textract_analyzeid.CreateAnalyzeidTool(cfg),
+		tools_x_amz_target_textract_getexpenseanalysis.CreateGetexpenseanalysisTool(cfg),
+	}
+}
